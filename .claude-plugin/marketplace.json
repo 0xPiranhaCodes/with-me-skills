@@ -1,0 +1,11 @@
+{
+  "name": "with-me",
+  "owner": { "name": "with-me maintainers" },
+  "plugins": [
+    {
+      "name": "with-me",
+      "source": "./",
+      "description": "build-with-me, design-with-me, debug-with-me: a persona panel that researches first, asks once, and scales effort to the task."
+    }
+  ]
+}
