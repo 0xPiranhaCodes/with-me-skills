@@ -7,3 +7,5 @@ license: MIT
 # debug-with-me
 
 Follow `references/debug-loop.md` from step 1 to its done condition.
+
+When the user asks to commit the fix or open a pull request, follow `references/ship.md`.

@@ -26,4 +26,6 @@ Start by reading `docs/brief.md` if it exists. Its answers are settled.
 7. **Review.** Review the full diff as `references/persona-reviewer.md`.
    - Done when every finding is fixed or listed for the user.
 
+8. **Ship,** when the user asks to commit, open a pull request or release. Follow `references/ship.md`.
+
 Finish with what was built, how to run it, and any finding left for the user.

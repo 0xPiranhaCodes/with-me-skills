@@ -32,15 +32,18 @@ Works in Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode, Amp, 
 
 **Tests that prove something, reviews with fresh eyes.** One test at a time, each seen failing for the right reason before any code. The review runs in a separate context that sees only the diff and the acceptance criteria, where the agent supports it.
 
+**Shipping on request.** Ask to commit, open a pull request or release, and it syncs with the default branch, re-runs the tests, and writes the commit and pull request in your repo's style. Merging, tagging and deploying wait for your go-ahead.
+
 **The cost is published.** Each skill is a short router that loads one small file per step. This is what a run reads, measured by `scripts/check.sh` at roughly 4 characters per token:
 
 | Run | Approx. tokens loaded |
 |---|---|
 | Three descriptions, always in context | 171 |
-| debug-with-me, a bug | 1330 |
-| build-with-me, tier S change | 1826 |
-| build-with-me, tier M with 3 personas | 3524 |
-| build-with-me, tier L, everything | 4097 |
+| debug-with-me, a bug | 1353 |
+| build-with-me, tier S change | 1843 |
+| build-with-me, tier M with 3 personas | 3540 |
+| build-with-me, tier L, everything | 4114 |
+| Shipping, added only when you ask | 268 |
 | design-with-me, tier L | 3054 |
 
 These are instruction tokens only. The work itself (research, code, tests) costs what it costs.

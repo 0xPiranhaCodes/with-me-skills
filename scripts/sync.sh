@@ -14,5 +14,5 @@ sync() {
 design="sizing research panel persona-ceo persona-cto persona-designer persona-brand persona-sdet docs stack"
 
 sync design-with-me $design
-sync build-with-me $design build-loop debug-loop persona-engineer persona-reviewer
-sync debug-with-me debug-loop persona-engineer persona-sdet persona-reviewer
+sync build-with-me $design build-loop debug-loop persona-engineer persona-reviewer ship
+sync debug-with-me debug-loop persona-engineer persona-sdet persona-reviewer ship

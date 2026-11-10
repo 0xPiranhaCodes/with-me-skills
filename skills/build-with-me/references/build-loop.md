@@ -16,8 +16,6 @@ Build in vertical slices: each one runs end to end and shows the user something 
    5. Tick the slice in `docs/slices.md`.
 3. **Drift.** When the code has to contradict an ADR, stop, write the ADR that supersedes it, then continue.
 
-Commit when the user asks for commits.
-
 ## Done when
 
 Every slice is ticked, every acceptance criterion has a passing test, and the last full test run is green.
