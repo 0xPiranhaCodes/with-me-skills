@@ -139,6 +139,8 @@ Claude Code plugin:
 /plugin install with-me@with-me
 ```
 
+Installed as a plugin, the commands carry the plugin name: `/with-me:build-with-me`.
+
 By hand: copy the folders under `skills/` into your agent's skills directory (`.claude/skills` for Claude Code, `.agents/skills` for most others).
 
 ## Status
