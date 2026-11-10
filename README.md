@@ -28,18 +28,20 @@ Works in Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode, Amp, 
 
 **One round of questions, each with a recommended answer.** Reply `ok` to accept them all.
 
-**Decisions live on disk.** Answers go to `docs/brief.md` and ADRs, so the next session picks up where you left off and asks nothing twice.
+**Decisions and progress live on disk.** Answers go to `docs/brief.md` and ADRs, and the work is a checklist in `docs/slices.md`, so the next session asks nothing twice and resumes at the first unticked slice.
+
+**Tests that prove something, reviews with fresh eyes.** One test at a time, each seen failing for the right reason before any code. The review runs in a separate context that sees only the diff and the acceptance criteria, where the agent supports it.
 
 **The cost is published.** Each skill is a short router that loads one small file per step. This is what a run reads, measured by `scripts/check.sh` at roughly 4 characters per token:
 
 | Run | Approx. tokens loaded |
 |---|---|
 | Three descriptions, always in context | 171 |
-| debug-with-me, a bug | 1100 |
-| build-with-me, tier S change | 1499 |
-| build-with-me, tier M with 3 personas | 3060 |
-| build-with-me, tier L, everything | 3634 |
-| design-with-me, tier L | 2881 |
+| debug-with-me, a bug | 1330 |
+| build-with-me, tier S change | 1826 |
+| build-with-me, tier M with 3 personas | 3524 |
+| build-with-me, tier L, everything | 4097 |
+| design-with-me, tier L | 3054 |
 
 These are instruction tokens only. The work itself (research, code, tests) costs what it costs.
 
@@ -81,7 +83,7 @@ agent  Wrote docs/brief.md, docs/adr/0001-stack.md, ARCHITECTURE.md, README.md
 | Principal Engineer | The smallest complete change that fits the codebase | The implementation of every slice and fix |
 | Reviewer | The diff, as next year's maintainer | Final review |
 
-On a new project, agents that support subagents run the personas in parallel. Everywhere else they run in one conversation with the same output.
+Agents that support subagents run the panel in parallel on a new project, and the Reviewer in its own context on features and new projects. Everywhere else it all runs in one conversation.
 
 ## Install
 

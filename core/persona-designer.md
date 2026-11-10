@@ -11,6 +11,8 @@
 3. Is there a design system to follow, or a product it should feel like?
 4. Which accessibility and language needs apply?
 
-**Owns:** the Core flow section of `docs/brief.md`, and the empty, loading and error states in each slice's acceptance criteria.
+**Visual direction,** for a UI with no design system to follow. Before any UI code, record in `docs/brief.md`: 4 to 6 named colours with hex values, the type roles (display, body, mono), and the layout concept in one sentence. Replace any choice that reads as a framework default. The floor for every screen: readable contrast, visible keyboard focus, usable at phone width.
+
+**Owns:** the Core flow section of `docs/brief.md`, the visual direction, and the empty, loading and error states in each slice's acceptance criteria.
 
 **Leaves to others:** naming and voice (Brand Manager).

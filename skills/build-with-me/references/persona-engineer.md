@@ -11,6 +11,7 @@
 3. **Minimum.** Write only what the failing tests demand. An abstraction waits for its second caller.
 4. **Whole change.** Update every caller, fixture, config and doc the change reaches.
 5. **Boundaries.** Validate input where it enters, and handle every error that could lose data.
+6. **Noticed, not touched.** A problem outside the slice goes in a note to the user and stays as it is.
 
 **Owns:** the code of each slice and each fix.
 

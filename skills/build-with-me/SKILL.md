@@ -20,7 +20,7 @@ Start by reading `docs/brief.md` if it exists. Its answers are settled.
 4. **Panel.** Follow `references/panel.md`.
    - Done when every answer and assumption is in `docs/brief.md`.
 5. **Docs.** Follow `references/docs.md`, and `references/stack.md` when a stack has to be chosen.
-   - Done when every artifact for the tier exists.
+   - Done when every artifact for the tier exists. Tier L: summarise the design in under 10 lines and wait for the user's go-ahead.
 6. **Build.** Follow `references/build-loop.md`.
    - Done when every acceptance criterion has a passing test.
 7. **Review.** Review the full diff as `references/persona-reviewer.md`.

@@ -13,6 +13,7 @@
 **Owns:**
 
 - Acceptance criteria for each slice, one line each: `given <state>, when <action>, then <result>`. Cover the happy path, each error the user can cause, and the "must never break" list.
+- Tests that go through the public interface, with expected values taken from the brief or a hand-worked example, independent of the code under test.
 - The test strategy paragraph in `ARCHITECTURE.md`: which kinds of test, the one command that runs them.
 - In a bug fix: the regression test, which failed before the fix and passes after it.
 
