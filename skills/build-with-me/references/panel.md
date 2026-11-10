@@ -19,7 +19,7 @@ Tier L seats all five. The Principal Engineer and the Reviewer ask nothing up fr
    - up to 3 concerns;
    - its questions, each with a recommended answer and a one-line reason.
 
-   A question earns its place only when the answer changes what gets built. Whatever the research, the repo or the brief already answers is written as an assumption.
+   One question holds one decision and takes one answer; each decision counts against the cap. A question earns its place only when the answer changes what gets built. Whatever the research, the repo or the brief already answers is written as an assumption.
    - Tier L, and the host can spawn subagents: one subagent per persona, in parallel. Give each the request, the path to its persona file, and the path to `docs/research.md`.
    - Otherwise: run the personas one after another in this context, same 150-word limit.
 3. **Merge.** Drop duplicates, order by how much rework a wrong answer would cost, and cut to the tier's cap. Each cut question becomes an assumption with its recommended answer.

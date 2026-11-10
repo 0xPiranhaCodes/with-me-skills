@@ -40,11 +40,11 @@ Works in Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode, Amp, 
 |---|---|
 | Three descriptions, always in context | 171 |
 | debug-with-me, a bug | 1353 |
-| build-with-me, tier S change | 1843 |
-| build-with-me, tier M with 3 personas | 3540 |
-| build-with-me, tier L, everything | 4114 |
+| build-with-me, tier S change | 1918 |
+| build-with-me, tier M with 3 personas | 3638 |
+| build-with-me, tier L, everything | 4212 |
 | Shipping, added only when you ask | 268 |
-| design-with-me, tier L | 3054 |
+| design-with-me, tier L | 3077 |
 
 These are instruction tokens only. The work itself (research, code, tests) costs what it costs.
 

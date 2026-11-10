@@ -9,9 +9,9 @@ Build in vertical slices: each one runs end to end and shows the user something 
    - Tier S: one slice, no ledger.
    - Tier L: the first slice also sets up the project, the test runner, and the run command in `README.md`.
 2. **For each slice:**
-   1. Write its acceptance criteria as the SDET (`persona-sdet.md`).
-   2. Take one criterion and write its test. Watch it go red for the right reason: it fails on the assertion, with the expected message. A test that passes at once is testing existing behaviour; rewrite it.
-   3. Turn it green as the Principal Engineer (`persona-engineer.md`), then return to 2 for the next criterion.
+   1. Write its acceptance criteria as the SDET (`persona-sdet.md`), as a checklist under the slice in `docs/slices.md`.
+   2. Take the first unticked criterion and write its one test. Watch it go red for the right reason: it fails on the assertion, with the expected message. For new code, stub the interface first so the import resolves and the assertion is what fails. A test that passes at once is testing existing behaviour; rewrite it.
+   3. Turn it green as the Principal Engineer (`persona-engineer.md`). Tick the criterion. The next criterion's test is written only now: return to 2.
    4. Run the full test command and read its output. For a slice with a UI, when the host has a browser tool, walk the slice's flow in the browser too.
    5. Tick the slice in `docs/slices.md`.
 3. **Drift.** When the code has to contradict an ADR, stop, write the ADR that supersedes it, then continue.

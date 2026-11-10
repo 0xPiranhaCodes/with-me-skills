@@ -8,7 +8,7 @@ license: MIT
 
 Build what the user asked for, with effort scaled to the task. Read each reference only when you reach its step.
 
-Start by reading `docs/brief.md` if it exists. Its answers are settled.
+Start by reading `docs/brief.md` if it exists. Its answers are settled. When the user asks to continue and `docs/slices.md` has unticked slices, go straight to step 6.
 
 ## Steps
 
