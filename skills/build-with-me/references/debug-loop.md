@@ -9,7 +9,7 @@ Fix the cause once, and leave a test that would have caught it.
    - Done when it fails for the reported reason, every time.
 3. **Root cause.** Trace back from the symptom to the first wrong value. State the cause in one sentence with `file:line`. Find every caller of the faulty code.
    - After two wrong hypotheses, gather evidence instead of guessing again: bisect, or add logging at the boundary where the value turns wrong.
-4. **Fix** at the cause, once, in the shared code.
+4. **Fix** at the cause, once, in the shared code, as the Principal Engineer (`persona-engineer.md`).
 5. **Verify.** The loop is green and the full test command is green. Keep the loop as the regression test (`persona-sdet.md`).
 6. **Review** the diff as the Reviewer (`persona-reviewer.md`).
 7. **Report** in one paragraph: the cause, the fix, the test.

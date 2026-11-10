@@ -10,7 +10,7 @@ A panel of personas reads the research and asks the user everything in one round
 | Brand Manager | `persona-brand.md` | naming or user-facing copy |
 | Principal SDET | `persona-sdet.md` | always |
 
-Tier L seats all five. The Reviewer persona asks nothing up front; it joins at the review step.
+Tier L seats all five. The Principal Engineer and the Reviewer ask nothing up front; they join at the build and review steps.
 
 ## Steps
 

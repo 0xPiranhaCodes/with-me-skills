@@ -1,6 +1,6 @@
 # with-me
 
-**A founding team in three commands.** A CEO, CTO, Principal Designer, Brand Manager, Principal SDET and Reviewer research what already exists, ask you everything once, write the decisions down, then build or debug with you.
+**A founding team in three commands.** A CEO, CTO, Principal Designer, Brand Manager, Principal SDET, Principal Engineer and Reviewer research what already exists, ask you everything once, write the decisions down, then build or debug with you.
 
 ```bash
 npx skills add 0xPiranhaCodes/with-me-skills
@@ -35,11 +35,11 @@ Works in Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode, Amp, 
 | Run | Approx. tokens loaded |
 |---|---|
 | Three descriptions, always in context | 171 |
-| debug-with-me, a bug | 844 |
-| build-with-me, tier S change | 1250 |
-| build-with-me, tier M with 3 personas | 2804 |
-| build-with-me, tier L, everything | 3378 |
-| design-with-me, tier L | 2873 |
+| debug-with-me, a bug | 1100 |
+| build-with-me, tier S change | 1499 |
+| build-with-me, tier M with 3 personas | 3060 |
+| build-with-me, tier L, everything | 3634 |
+| design-with-me, tier L | 2881 |
 
 These are instruction tokens only. The work itself (research, code, tests) costs what it costs.
 
@@ -78,6 +78,7 @@ agent  Wrote docs/brief.md, docs/adr/0001-stack.md, ARCHITECTURE.md, README.md
 | Principal Designer | A new user finishing the core flow unaided | Core flow, empty and error states |
 | Brand Manager | A stranger getting it in five seconds | Name, pitch, README voice |
 | Principal SDET | Every behaviour having a test that can fail | Acceptance criteria, regression tests |
+| Principal Engineer | The smallest complete change that fits the codebase | The implementation of every slice and fix |
 | Reviewer | The diff, as next year's maintainer | Final review |
 
 On a new project, agents that support subagents run the personas in parallel. Everywhere else they run in one conversation with the same output.

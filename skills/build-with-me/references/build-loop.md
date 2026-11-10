@@ -9,7 +9,7 @@ Build in vertical slices: each one runs end to end and shows the user something 
 2. **For each slice:**
    1. Write its acceptance criteria as the SDET (`persona-sdet.md`).
    2. Write the tests and watch them go red.
-   3. Write the minimum code that turns them green.
+   3. Turn them green as the Principal Engineer (`persona-engineer.md`).
    4. Run the full test command and read its output.
 3. **Drift.** When the code has to contradict an ADR, stop, write the ADR that supersedes it, then continue.
 
