@@ -114,6 +114,8 @@ sh scripts/sync.sh    # after editing core/
 sh scripts/check.sh   # size limits, sync drift, and the token table above
 ```
 
+A change to how the skills behave should still pass the four golden scenarios in [`evals/`](evals/README.md): a bug, a new project, a resume and a feature, each with a fixture, a scripted conversation and a checker.
+
 Limits that keep it cheap: 60 lines per `SKILL.md`, 80 per reference file, 300 characters per description. A change that raises the token table needs a reason in the pull request.
 
 ## License

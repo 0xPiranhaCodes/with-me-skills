@@ -1,0 +1,21 @@
+:root{--paper:#F6F1E7;--ink:#2B2A28;--clay:#C8643C;--dust:#D9D1C2;--moss:#6B7F5A}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,sans-serif}
+main{max-width:30rem;margin:0 auto;padding:2rem 16px}
+h1{font:600 2.2rem Georgia,serif;margin:0}
+.sub{margin:.25rem 0 1.5rem;color:var(--moss)}
+ul{list-style:none;padding:0;margin:0 0 1rem}
+li{padding:.75rem 0;border-bottom:1px solid var(--dust)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:.5rem}
+.count{font:.85rem ui-monospace,monospace}
+.dots{display:flex;gap:4px;margin-top:.4rem}
+.dots button{width:18px;height:18px;padding:0;border:0;border-radius:50%;background:var(--dust)}
+.dots button.on{background:var(--clay)}
+.dots button.noted{box-shadow:0 5px 0 -1px var(--moss)}
+.note{display:flex;gap:.5rem;margin-top:.6rem}
+button,input{font:inherit;color:inherit}
+button{background:none;border:1px solid var(--ink);border-radius:6px;padding:.4rem .8rem;cursor:pointer}
+button[aria-pressed=true]{background:var(--clay);border-color:var(--clay);color:#fff}
+input{padding:.4rem;border:1px solid var(--dust);border-radius:6px;background:#fff;min-width:0;width:calc(100% - 5rem)}
+:focus-visible{outline:3px solid var(--moss);outline-offset:2px}
+.sr{position:absolute;left:-9999px}

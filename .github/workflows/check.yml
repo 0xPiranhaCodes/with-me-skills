@@ -6,3 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: sh scripts/check.sh
+      - run: sh evals/check.sh fixtures
