@@ -1,18 +1,46 @@
 # with-me
 
+[![check](https://github.com/0xPiranhaCodes/with-me-skills/actions/workflows/check.yml/badge.svg)](https://github.com/0xPiranhaCodes/with-me-skills/actions/workflows/check.yml)
+
 **A founding team in three commands.** A CEO, CTO, Principal Designer, Brand Manager, Principal SDET, Principal Engineer and Reviewer research what already exists, ask you everything once, write the decisions down, then build or debug with you.
 
 ```bash
 npx skills add 0xPiranhaCodes/with-me-skills
 ```
 
-Works in Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode, Amp, Windsurf, and any agent that reads the [Agent Skills](https://agentskills.io) format.
+Plain [Agent Skills](https://agentskills.io) files, so the same install serves Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode, Amp and Windsurf. See [Status](#status) for what has been tested.
 
 | Command | Use it to | You end up with |
 |---|---|---|
 | `build-with-me` | Build a feature or a whole project | Tested, reviewed code and up-to-date docs |
 | `design-with-me` | Decide before you code | Brief, research, ADRs, `ARCHITECTURE.md`, README |
 | `debug-with-me` | Fix a bug | The fix, a regression test, the cause in one paragraph |
+
+## Quick start
+
+Install, open your agent in a project folder (an empty one is fine), and say what you want:
+
+```text
+/build-with-me a habit tracker for people who hate habit trackers
+/build-with-me let me archive a habit instead of deleting it
+/design-with-me a CLI that syncs dotfiles between machines
+/debug-with-me the longest streak shows 2 but I checked in five days in a row
+```
+
+That is the Claude Code form. In other agents, name the skill in your request: `use build-with-me to add CSV export`.
+
+Then answer one round of questions, or reply `ok` to take every recommendation. On a new project it shows you the design and waits for `go` before writing code. Come back later with `/build-with-me continue`.
+
+What it writes into your repo, besides the code and tests:
+
+```text
+docs/research.md    comparable projects, what to copy and avoid, the gap
+docs/brief.md       problem, scope, and every answer and assumption
+docs/adr/           one short file per hard-to-reverse decision
+docs/slices.md      the work as a checklist; a new session resumes from it
+ARCHITECTURE.md     components, data model, core flow, test strategy
+README.md           name, pitch, install, quick start
+```
 
 ## Why another skill pack
 
@@ -50,28 +78,36 @@ These are instruction tokens only. The work itself (research, code, tests) costs
 
 ## What a run looks like
 
-An illustrative tier L session, shortened:
+A real session, shortened: the `new-project` [golden scenario](evals/README.md) run with Claude Sonnet.
 
 ```text
-you    build-with-me: a habit tracker for people who hate habit trackers
+you    /build-with-me a habit tracker for people who hate habit trackers
 
-agent  Tier L: new project. Say S or M to change it.
-       Researched 5 comparables -> docs/research.md
-       Gap: none of them works without an account.
+agent  Tier L: a new project, so the full process applies. Say S or M to change it.
+       Wrote docs/research.md (5 comparables).
+       Gap: none treats "I will quit this app" as the main failure mode.
 
-       7 questions. Reply "ok" to accept every recommendation.
-       1. [CEO]      First user?            Recommended: you, daily, on your phone
-       2. [CEO]      Out of v1?             Recommended: social features, streak sharing
-       3. [CTO]      Where does data live?  Recommended: on the device, no backend
-       4. [Designer] Surface?               Recommended: installable web app
-       5. [Brand]    Name?                  Recommended: "Tally" (2 alternatives offered)
-       6. [SDET]     Must never break?      Recommended: losing logged days
-       7. [CTO]      Stack?                 Recommended: SvelteKit + IndexedDB
+       9 questions. Reply "ok" to accept them all, or give changes by number.
+       1. [CEO]      Who is the first user?    Recommended: you, and people who quit other trackers
+       2. [CEO]      What makes v1 a success?  Recommended: still opened after 30 days, without guilt
+       3. [CEO]      Out of v1?                Recommended: streaks, points, social, notifications, accounts
+       4. [CEO]      Who pays?                 Recommended: free and open source, no monetisation in v1
+       6. [Designer] Core flow?                Recommended: one tap per habit, a missed day is just blank
+       7. [Designer] Visual direction?         Recommended: warm paper, ink, moss; an index-card column
+       ...
 
 you    ok, but call it Notch
 
-agent  Wrote docs/brief.md, docs/adr/0001-stack.md, ARCHITECTURE.md, README.md
-       Slice 1 of 4: log a habit for today ... 6 tests green
+agent  Wrote docs/brief.md, two ADRs, ARCHITECTURE.md and README.md. Nothing is built yet.
+       Design summary: (8 lines)
+       Reply "go" to start the build, or tell me what to change.
+
+you    go, but stop after the first slice so I can take a look
+
+agent  Slice 1 is done and I've stopped there. You can add a habit, tap to mark today,
+       see "N of 14", and your data survives a reload.
+       5 of 5 criteria ticked in docs/slices.md; npm test: 5 pass, 0 fail.
+       I walked the flow in a real browser. Say "continue" for slice 2.
 ```
 
 ## The panel
@@ -103,7 +139,18 @@ Claude Code plugin:
 /plugin install with-me@with-me
 ```
 
-By hand: copy the folders under `skills/` into your agent's skills directory.
+By hand: copy the folders under `skills/` into your agent's skills directory (`.claude/skills` for Claude Code, `.agents/skills` for most others).
+
+## Status
+
+Version 0.1. What has and has not been exercised:
+
+- **Tested:** all four [golden scenarios](evals/README.md) (a bug, a new project, a resume, a feature) pass with Claude Sonnet.
+- **Not yet tested:** other agents and models. They read the same files; reports and fixes are welcome.
+- **Depends on your agent's tools:**
+  - Web search: without it the research still runs, from the model's own knowledge, and marks every comparable `unverified`.
+  - Subagents: needed for the parallel panel and the separate-context review. Without them everything runs in one conversation.
+  - A browser tool: needed for the click-through of UI slices.
 
 ## Contributing
 
